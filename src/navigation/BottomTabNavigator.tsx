@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {vs} from 'react-native-size-matters';
+import {s, vs} from 'react-native-size-matters';
 import {BottomTabNavigatorParamList} from '../types/navigation';
 import {BOTTOM_NAVS} from '../../constants/config';
 import {COLORS, SIZES} from '../../constants';
@@ -13,13 +13,10 @@ const BottomTabNavigator = () => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          height: vs(SIZES.font * 5),
+          height: vs(72),
+          paddingHorizontal: s(SIZES.base * 2),
         },
         tabBarShowLabel: false,
-        tabBarLabelStyle: {
-          position: 'absolute',
-          bottom: 10,
-        },
         tabBarActiveTintColor: COLORS.primary,
         tabBarInactiveTintColor: COLORS.gray,
       }}>

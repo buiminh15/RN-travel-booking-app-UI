@@ -9,17 +9,26 @@ import {
 import React from 'react';
 import {Icon} from 'react-native-eva-icons';
 import {commonStyles} from '../../styles/commonStyles';
-import {COLORS} from '../../../constants';
+import {COLORS, FONTS, SIZES} from '../../../constants';
+import {ms} from 'react-native-size-matters';
 type CustomTextInputProps = TouchableOpacityProps &
   TextInputProps & {
-    containerStyle?: ViewStyle;
+    containerStyle?: ViewStyle | ViewStyle[];
     iconName?: string;
     iconColor?: string;
     iconSize?: number;
+    onPress: () => void;
   };
 
 const TextInput = (props: CustomTextInputProps) => {
-  const {containerStyle, iconName, iconColor, iconSize, ...otherProps} = props;
+  const {
+    containerStyle,
+    iconName,
+    iconColor,
+    iconSize,
+    onPress,
+    ...otherProps
+  } = props;
   return (
     <View
       style={[
@@ -29,9 +38,12 @@ const TextInput = (props: CustomTextInputProps) => {
         commonStyles.bgWhite,
         containerStyle,
       ]}>
-      <DefaultTextInput {...otherProps} />
+      <DefaultTextInput
+        style={[FONTS.body3, commonStyles.flex1]}
+        {...otherProps}
+      />
       {iconName && (
-        <TouchableOpacity {...otherProps}>
+        <TouchableOpacity onPress={onPress} hitSlop={ms(SIZES.radius)}>
           <Icon
             name={iconName}
             color={iconColor || COLORS.white}

@@ -9,7 +9,7 @@ import {
   BottomIconType,
   BottomTabNavigatorParamList,
 } from '../src/types/navigation';
-import BottomIcon from '../src/components/BottomIcon';
+import {BottomIcon} from '../src/components';
 
 type BottomTypes = keyof BottomTabNavigatorParamList;
 type BottomTabsType = {
@@ -71,7 +71,7 @@ const BOTTOM_NAVS: BottomTabsType[] = [
         color={color}
         size={size}
         name="Profile"
-        iconName="profile-outline"
+        iconName="person-outline"
       />
     ),
   },
