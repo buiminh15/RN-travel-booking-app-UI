@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
 
     borderWidth: s(1),
     borderRadius: ms(SIZES.radius),
-    borderColor: COLORS.gray,
+    borderColor: COLORS.opacityGray,
   },
 });

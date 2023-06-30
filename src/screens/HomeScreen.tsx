@@ -8,9 +8,10 @@ import {NearbyHotel} from '../types/Hotel';
 import {vs} from 'react-native-size-matters';
 import {SIZES} from '../../constants';
 
-const NAME_TYPE = {
+export const NAME_TYPE = {
   NEARBY: 'Nearby your location',
   POPULAR: 'Popular Destination',
+  SCHEDULE: 'My Schedule',
 };
 
 const DATA = [

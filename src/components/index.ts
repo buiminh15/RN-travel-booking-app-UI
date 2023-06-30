@@ -9,3 +9,6 @@ export {default as HomeListFooter} from './HomeListFooter';
 export {default as HomeListHeader} from './HomeListHeader';
 export {default as Nearby} from './Nearby';
 export {default as Destination} from './Destination';
+export {default as BookingListHeader} from './BookingListHeader';
+export {default as Booking} from './Booking';
+export {default as BookingItem} from './BookingItem';

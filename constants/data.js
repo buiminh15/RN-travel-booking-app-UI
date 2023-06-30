@@ -123,4 +123,73 @@ const POPULAR_DATA = [
       'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.',
   },
 ];
-export {NEARBY_DATA, POPULAR_DATA};
+
+const BOOKING_DATA = [
+  {
+    id: 'f48ce748-5a75-4eda-be77-9c8f4469bddf',
+    image: 'http://dummyimage.com/300x300.png/5fa2dd/ffffff',
+    title: 'Yam',
+    address: '93 Lawn Road',
+    price: 191,
+    rating: 5,
+    description:
+      'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.',
+    scheduledDate: '02/05/2023',
+  },
+  {
+    id: '875da90f-1c91-4dec-83a2-7d7dd8fb733c',
+    image: 'http://dummyimage.com/300x300.png/5fa2dd/ffffff',
+    title: "Cleland's Evening Primrose",
+    address: '5 Muir Point',
+    price: 250,
+    rating: 4,
+    description:
+      'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
+    scheduledDate: '08/01/2022',
+  },
+  {
+    id: '74b1d75b-c7fc-468b-ac9a-de9c2db12ef1',
+    image: 'http://dummyimage.com/300x300.png/dddddd/000000',
+    title: 'Fringed Pink',
+    address: '35514 Sloan Park',
+    price: 215,
+    rating: 4,
+    description:
+      'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
+    scheduledDate: '12/10/2022',
+  },
+  {
+    id: '06fcd35d-585a-42bb-ab4b-40b0979e0c9e',
+    image: 'http://dummyimage.com/300x300.png/5fa2dd/ffffff',
+    title: 'Cup Lichen',
+    address: '2572 Lakewood Gardens Park',
+    price: 223,
+    rating: 2,
+    description:
+      'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
+    scheduledDate: '04/20/2023',
+  },
+  {
+    id: '51035711-2a24-4a44-94bb-659870ef0a3b',
+    image: 'http://dummyimage.com/300x300.png/dddddd/000000',
+    title: 'Toano Milkvetch',
+    address: '77 Aberg Center',
+    price: 63,
+    rating: 3,
+    description:
+      'Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
+    scheduledDate: '09/05/2022',
+  },
+  {
+    id: '23a0c801-512e-4b35-a06c-048c5d27c3d5',
+    image: 'http://dummyimage.com/300x300.png/cc0000/ffffff',
+    title: 'Australasia Trichostomopsis Moss',
+    address: '96 Homewood Park',
+    price: 252,
+    rating: 2,
+    description:
+      'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
+    scheduledDate: '06/01/2023',
+  },
+];
+export {NEARBY_DATA, POPULAR_DATA, BOOKING_DATA};

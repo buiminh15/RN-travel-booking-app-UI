@@ -6,7 +6,7 @@ export const COLORS = {
   // base colors
   primary: '#4C4DDC',
   opacityPrimary: 'rgba(76,77,220, 0.1)',
-
+  opacityGray: 'rgba(135,135,135, 0.3)',
   // colors
   black: '#101010',
   white: '#FFFFFF',

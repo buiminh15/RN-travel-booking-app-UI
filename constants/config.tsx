@@ -42,7 +42,7 @@ const BOTTOM_NAVS: BottomTabsType[] = [
         focused={focused}
         color={color}
         size={size}
-        name="Booking"
+        name="Schedule"
         iconName="calendar-outline"
       />
     ),

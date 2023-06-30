@@ -39,7 +39,7 @@ const TextInput = (props: CustomTextInputProps) => {
         containerStyle,
       ]}>
       <DefaultTextInput
-        style={[FONTS.body3, commonStyles.flex1]}
+        style={[FONTS.body3, commonStyles.flex1, {color: COLORS.black}]}
         {...otherProps}
       />
       {iconName && (

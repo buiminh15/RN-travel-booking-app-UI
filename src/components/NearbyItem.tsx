@@ -31,7 +31,13 @@ const NearbyItem = ({item}: {item: Hotel}) => {
             commonStyles.itemsCenter,
             commonStyles.justifyBetween,
           ]}>
-          <Text textBaseColorType="black">{item.title}</Text>
+          <Text
+            numberOfLines={1}
+            ellipsizeMode="tail"
+            textBaseColorType="black"
+            style={[styles.text]}>
+            {item.title}
+          </Text>
           <View
             style={[
               commonStyles.row,
@@ -45,7 +51,11 @@ const NearbyItem = ({item}: {item: Hotel}) => {
           </View>
         </View>
 
-        <Text textBaseColorType="gray" textBaseType="sm">
+        <Text
+          numberOfLines={1}
+          ellipsizeMode="tail"
+          textBaseColorType="gray"
+          textBaseType="sm">
           {item.address}
         </Text>
         <View style={[commonStyles.row, commonStyles.itemsCenter]}>
@@ -63,20 +73,22 @@ export default NearbyItem;
 
 const styles = StyleSheet.create({
   container: {
-    height: vs(SIZES.padding * 10),
+    width: s(SIZES.width / 2),
     borderRadius: 10,
     overflow: 'hidden',
     backgroundColor: COLORS.white,
   },
   imageContainer: {
-    width: s(SIZES.width / 2),
-    height: '70%',
+    width: '100%',
+    height: vs(SIZES.padding * 7),
   },
   image: {
     width: '100%',
     height: '100%',
   },
-
+  text: {
+    width: s(100),
+  },
   contentContainer: {
     paddingHorizontal: s(SIZES.font),
     paddingVertical: vs(SIZES.base),

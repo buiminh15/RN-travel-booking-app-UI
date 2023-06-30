@@ -1,14 +1,14 @@
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import {Icon} from 'react-native-eva-icons';
-import {ms, s, vs} from 'react-native-size-matters';
 import {COLORS, SIZES, images} from '../../constants';
+import {ms, s, vs} from 'react-native-size-matters';
 import {commonStyles} from '../styles/commonStyles';
-import {Hotel} from '../types/Hotel';
 import ImageC from './common/ImageC';
 import Text from './common/Text';
+import {Schedule} from '../types/Hotel';
+import {Icon} from 'react-native-eva-icons';
 
-const DestinationItem = ({item}: {item: Hotel}) => {
+const BookingItem = ({item}: {item: Schedule}) => {
   return (
     <TouchableOpacity
       style={[
@@ -48,31 +48,40 @@ const DestinationItem = ({item}: {item: Hotel}) => {
           </View>
         </View>
 
-        <Text numberOfLines={1} ellipsizeMode="tail" textBaseColorType="gray">
-          {item.address}
-        </Text>
-
         <View
           style={[
             commonStyles.row,
             commonStyles.itemsCenter,
-            commonStyles.gap,
+            commonStyles.gapSm,
           ]}>
-          <View style={[commonStyles.row, commonStyles.gapSm]}>
-            {Array(item.rating)
-              .fill(1)
-              .map((_, index) => (
-                <Icon
-                  key={`rating-star-${index}`}
-                  name="star"
-                  width={24}
-                  height={24}
-                  fill={COLORS.yellow}
-                />
-              ))}
-          </View>
-          <Text textBaseColorType="black" textBaseType="headingMd">
-            {item.rating}
+          <Icon
+            name="pin-outline"
+            width={20}
+            height={20}
+            fill={COLORS.primary}
+          />
+          <Text
+            numberOfLines={1}
+            ellipsizeMode="tail"
+            textBaseColorType="gray"
+            textBaseType="sm">
+            {item.address}
+          </Text>
+        </View>
+        <View
+          style={[
+            commonStyles.row,
+            commonStyles.itemsCenter,
+            commonStyles.gapSm,
+          ]}>
+          <Icon
+            name="calendar-outline"
+            width={20}
+            height={20}
+            fill={COLORS.primary}
+          />
+          <Text textBaseColorType="gray" textBaseType="sm">
+            {item.scheduledDate}
           </Text>
         </View>
       </View>
@@ -80,7 +89,7 @@ const DestinationItem = ({item}: {item: Hotel}) => {
   );
 };
 
-export default DestinationItem;
+export default BookingItem;
 
 const styles = StyleSheet.create({
   container: {

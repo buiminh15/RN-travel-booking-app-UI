@@ -33,6 +33,9 @@ export const commonStyles = StyleSheet.create({
   gap: {
     gap: s(SIZES.font),
   },
+  gapLg: {
+    gap: s(SIZES.font * 2),
+  },
   gapSm: {
     gap: s(SIZES.base / 2),
   },

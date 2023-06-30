@@ -8,8 +8,12 @@ export type Hotel = {
   description: string;
 };
 
+export type Schedule = Hotel & {
+  scheduledDate: string;
+};
+
 export type NearbyHotel = {
   id: string;
   name: string;
-  data: Hotel[];
+  data: Hotel[] | Schedule[];
 };
