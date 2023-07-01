@@ -25,7 +25,7 @@ const BottomIcon = ({focused, color, size, name, iconName}: Props) => {
           ]}>
           <Icon name={iconName} width={size} height={size} fill={color} />
           <Text
-            textBaseType="headingMd"
+            textBaseType="headingSm"
             textBaseColorType="primary"
             style={[styles.text]}>
             {name}

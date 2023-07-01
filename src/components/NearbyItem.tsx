@@ -7,10 +7,22 @@ import {Hotel} from '../types/Hotel';
 import Text from './common/Text';
 import {s, vs} from 'react-native-size-matters';
 import FastImage from 'react-native-fast-image';
+import {useNavigation} from '@react-navigation/native';
+import {MainStackParamList} from '../types/navigation';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 const NearbyItem = ({item}: {item: Hotel}) => {
+  const navigation =
+    useNavigation<
+      NativeStackScreenProps<
+        MainStackParamList,
+        'MainStackScreen'
+      >['navigation']
+    >();
   return (
-    <TouchableOpacity style={[styles.container, commonStyles.shadow]}>
+    <TouchableOpacity
+      style={[styles.container, commonStyles.shadow]}
+      onPress={() => navigation.navigate('DetailScreen', {item})}>
       <View style={[styles.imageContainer]}>
         <FastImage source={images.plant1} style={[styles.image]} />
       </View>
@@ -35,6 +47,7 @@ const NearbyItem = ({item}: {item: Hotel}) => {
             numberOfLines={1}
             ellipsizeMode="tail"
             textBaseColorType="black"
+            textBaseType="headingMd"
             style={[styles.text]}>
             {item.title}
           </Text>

@@ -192,4 +192,33 @@ const BOOKING_DATA = [
     scheduledDate: '06/01/2023',
   },
 ];
-export {NEARBY_DATA, POPULAR_DATA, BOOKING_DATA};
+
+const TAG_DATA = [
+  {
+    iconName: 'clipboard-outline',
+    id: 'fd9c5b4f-ff40-45a8-bcb7-c82e72802ab4',
+    name: 'Dynabox',
+  },
+  {
+    iconName: 'film-outline',
+    id: 'affa59f4-541e-4b48-b290-94f559db28d1',
+    name: 'Twitterworks',
+  },
+  {
+    iconName: 'folder-add-outline',
+    id: 'd37acde6-a500-40ab-a726-6f354d41915c',
+    name: 'Rhybox',
+  },
+  {
+    iconName: 'cube-outline',
+    id: 'd8d0f7c4-680d-4501-96df-e4e49decaf2a',
+    name: 'Babblestorm',
+  },
+  {
+    iconName: 'linkedin-outline',
+    id: '48083573-a490-4bd4-afa8-e6aee8af402d',
+    name: 'Flashset',
+  },
+];
+
+export {NEARBY_DATA, POPULAR_DATA, BOOKING_DATA, TAG_DATA};

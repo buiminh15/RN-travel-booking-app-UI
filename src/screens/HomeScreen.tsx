@@ -1,12 +1,10 @@
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {NEARBY_DATA, POPULAR_DATA} from '../../constants/data';
 import {Destination, HomeListHeader, Nearby} from '../components';
 import {commonStyles} from '../styles/commonStyles';
 import {NearbyHotel} from '../types/Hotel';
-import {vs} from 'react-native-size-matters';
-import {SIZES} from '../../constants';
 
 export const NAME_TYPE = {
   NEARBY: 'Nearby your location',
@@ -38,13 +36,14 @@ const renderMainItem = ({item}: {item: NearbyHotel}) => {
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView style={[commonStyles.paddingHorizontal, styles.container]}>
+    <SafeAreaView
+      style={[commonStyles.paddingHorizontal, commonStyles.mtContainer]}>
       <FlatList
         data={DATA}
         showsVerticalScrollIndicator={false}
         renderItem={renderMainItem}
         ListHeaderComponent={<HomeListHeader />}
-        ListFooterComponent={<View style={[styles.footer]} />}
+        ListFooterComponent={<View style={[commonStyles.footerMb]} />}
         keyExtractor={item => item.id}
       />
     </SafeAreaView>
@@ -52,12 +51,3 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: vs(SIZES.padding),
-  },
-  footer: {
-    marginBottom: vs(SIZES.padding),
-  },
-});

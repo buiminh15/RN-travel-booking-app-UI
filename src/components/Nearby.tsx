@@ -4,12 +4,22 @@ import {commonStyles} from '../styles/commonStyles';
 import {Hotel, NearbyHotel} from '../types/Hotel';
 import Text from './common/Text';
 import NearbyItem from './NearbyItem';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {MainStackParamList} from '../types/navigation';
 
 const renderItem = ({item}: {item: Hotel}) => {
   return <NearbyItem item={item} />;
 };
 
 const Nearby = ({itemData}: {itemData: NearbyHotel}) => {
+  const navigation =
+    useNavigation<
+      NativeStackScreenProps<
+        MainStackParamList,
+        'MainStackScreen'
+      >['navigation']
+    >();
   return (
     <View style={[commonStyles.gap, commonStyles.mt]}>
       <View>
@@ -22,7 +32,12 @@ const Nearby = ({itemData}: {itemData: NearbyHotel}) => {
           <Text textBaseColorType="black" textBaseType="headingLg">
             {itemData.name}
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('ViewAllScreen', {
+                name: itemData.name,
+              })
+            }>
             <Text textBaseColorType="primary" textBaseType="sm">
               See all
             </Text>
@@ -30,7 +45,7 @@ const Nearby = ({itemData}: {itemData: NearbyHotel}) => {
         </View>
       </View>
       <FlatList
-        data={itemData.data}
+        data={itemData.data as Hotel[]}
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={[commonStyles.gap]}

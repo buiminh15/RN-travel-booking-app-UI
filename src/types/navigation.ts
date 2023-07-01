@@ -1,6 +1,13 @@
+import {Hotel} from './Hotel';
+
 export type MainStackParamList = {
-  MainStackScreen: undefined;
-  DetailScreen: undefined;
+  MainStackScreen: BottomTabNavigatorParamList;
+  DetailScreen: {
+    item: Hotel;
+  };
+  ViewAllScreen: {
+    name: string;
+  };
 };
 
 export type BottomTabNavigatorParamList = {

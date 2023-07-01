@@ -42,6 +42,9 @@ export const commonStyles = StyleSheet.create({
   mt: {
     marginTop: vs(SIZES.font),
   },
+  mtContainer: {
+    marginTop: vs(SIZES.padding),
+  },
   paddingHorizontal: {
     paddingHorizontal: s(SIZES.padding),
   },
@@ -81,5 +84,8 @@ export const commonStyles = StyleSheet.create({
   },
   widthFull: {
     width: '100%',
+  },
+  footerMb: {
+    marginBottom: vs(SIZES.padding),
   },
 });

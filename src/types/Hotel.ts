@@ -12,8 +12,13 @@ export type Schedule = Hotel & {
   scheduledDate: string;
 };
 
+export type Preview = {
+  imageUrl: string;
+  id: string;
+};
+
 export type NearbyHotel = {
   id: string;
   name: string;
-  data: Hotel[] | Schedule[];
+  data: Hotel[] | Schedule[] | Preview[];
 };
