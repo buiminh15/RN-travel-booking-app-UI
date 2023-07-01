@@ -29,9 +29,18 @@ const ViewAllScreen = () => {
       : routeName === NAME_TYPE.POPULAR
       ? 2
       : 3;
-  const {hotels, error, size, setSize, isLoadingMore, isReachingEnd, mutate} =
-    usePaginateHotels(URL_PATH.POKEMON, typeIndex);
+  const {
+    hotels,
+    error,
+    size,
+    setSize,
+    isLoadingMore,
+    isReachingEnd,
+    mutate,
+    cache,
+  } = usePaginateHotels(URL_PATH.POKEMON, typeIndex);
 
+  console.log('📢 [ViewAllScreen.tsx:35]', hotels.length);
   if (error) {
     return (
       <View>
@@ -51,8 +60,10 @@ const ViewAllScreen = () => {
       </SafeAreaView>
     );
   }
+  console.log('📢 [ViewAllScreen.tsx:63]', cache.keys());
   const handleOnRefresh = () => {
-    mutate(URL_PATH.POKEMON);
+    mutate(undefined);
+    cache.delete(URL_PATH.POKEMON);
   };
   const handleLoadingMore = () => {
     setSize(size + 1);

@@ -6,6 +6,8 @@ import {commonStyles} from '../styles/commonStyles';
 import {MainStackParamList} from '../types/navigation';
 import IconC from './common/IconC';
 import Text from './common/Text';
+import {usePaginateHotels} from '../hooks/usePaginateHotel';
+import {URL_PATH} from '../configuaration/swr';
 
 type Props = {
   nameCategory: string;
@@ -16,6 +18,12 @@ const ViewAllListHeader = ({nameCategory}: Props) => {
     useNavigation<
       NativeStackScreenProps<MainStackParamList, 'ViewAllScreen'>['navigation']
     >();
+
+  const {mutate, hotels} = usePaginateHotels(URL_PATH.POKEMON, 1);
+  const handleCache = () => {
+    mutate(undefined);
+    console.log('📢 [ViewAllListHeader.tsx:25]', hotels.length);
+  };
   return (
     <View
       style={[
@@ -32,7 +40,7 @@ const ViewAllListHeader = ({nameCategory}: Props) => {
         ellipsizeMode="tail">
         View {nameCategory}
       </Text>
-      <IconC iconName="more-horizontal-outline" />
+      <IconC iconName="more-horizontal-outline" onPress={handleCache} />
     </View>
   );
 };
