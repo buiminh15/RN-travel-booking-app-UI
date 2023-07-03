@@ -7,8 +7,19 @@ import ImageC from './common/ImageC';
 import Text from './common/Text';
 import {Schedule} from '../types/Hotel';
 import {Icon} from 'react-native-eva-icons';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {MainStackParamList} from '../types/navigation';
 
 const BookingItem = ({item}: {item: Schedule}) => {
+  const navigation =
+    useNavigation<
+      NativeStackScreenProps<
+        MainStackParamList,
+        'MainStackScreen'
+      >['navigation']
+    >();
+
   return (
     <TouchableOpacity
       style={[
@@ -16,7 +27,8 @@ const BookingItem = ({item}: {item: Schedule}) => {
         commonStyles.shadow,
         commonStyles.row,
         commonStyles.gap,
-      ]}>
+      ]}
+      onPress={() => navigation.navigate('DetailScreen', {item})}>
       <View style={[styles.imageContainer]}>
         <ImageC
           roundedType="sm"

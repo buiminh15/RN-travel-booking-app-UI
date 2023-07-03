@@ -4,14 +4,14 @@ import {NearbyHotel, Preview} from '../types/Hotel';
 import Text from './common/Text';
 import FastImage from 'react-native-fast-image';
 import {s, vs} from 'react-native-size-matters';
-import {SIZES} from '../../constants';
+import {SIZES, images} from '../../constants';
 import {commonStyles} from '../styles/commonStyles';
 
-const renderItem = ({item}: {item: Preview}) => {
+const renderItem = () => {
   return (
     <View>
       <FastImage
-        source={{uri: item.imageUrl}}
+        source={images.plant5}
         resizeMode="cover"
         style={[styles.image]}
       />

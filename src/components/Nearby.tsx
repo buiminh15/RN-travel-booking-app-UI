@@ -7,6 +7,8 @@ import NearbyItem from './NearbyItem';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {MainStackParamList} from '../types/navigation';
+import {vs} from 'react-native-size-matters';
+import {SIZES} from '../../constants';
 
 const renderItem = ({item}: {item: Hotel}) => {
   return <NearbyItem item={item} />;
@@ -48,7 +50,10 @@ const Nearby = ({itemData}: {itemData: NearbyHotel}) => {
         data={itemData.data as Hotel[]}
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={[commonStyles.gap]}
+        contentContainerStyle={[
+          commonStyles.gap,
+          {paddingBottom: vs(SIZES.base)},
+        ]}
         keyExtractor={item => item.id}
         renderItem={renderItem}
       />

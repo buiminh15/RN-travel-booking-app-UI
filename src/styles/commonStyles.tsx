@@ -51,6 +51,9 @@ export const commonStyles = StyleSheet.create({
   paddingVertical: {
     paddingVertical: s(SIZES.padding),
   },
+  paddingVerticalSm: {
+    paddingVertical: s(SIZES.font),
+  },
   textCenter: {
     textAlign: 'center',
   },

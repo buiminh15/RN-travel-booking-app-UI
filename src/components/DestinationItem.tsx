@@ -7,8 +7,18 @@ import {commonStyles} from '../styles/commonStyles';
 import {Hotel} from '../types/Hotel';
 import ImageC from './common/ImageC';
 import Text from './common/Text';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {MainStackParamList} from '../types/navigation';
 
 const DestinationItem = ({item}: {item: Hotel}) => {
+  const navigation =
+    useNavigation<
+      NativeStackScreenProps<
+        MainStackParamList,
+        'MainStackScreen'
+      >['navigation']
+    >();
   return (
     <TouchableOpacity
       style={[
@@ -16,7 +26,8 @@ const DestinationItem = ({item}: {item: Hotel}) => {
         commonStyles.shadow,
         commonStyles.row,
         commonStyles.gap,
-      ]}>
+      ]}
+      onPress={() => navigation.navigate('DetailScreen', {item})}>
       <View style={[styles.imageContainer]}>
         <ImageC
           roundedType="sm"

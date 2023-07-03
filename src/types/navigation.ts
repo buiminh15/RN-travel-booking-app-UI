@@ -8,6 +8,7 @@ export type MainStackParamList = {
   ViewAllScreen: {
     name: string;
   };
+  EditProfileScreen: undefined;
 };
 
 export type BottomTabNavigatorParamList = {

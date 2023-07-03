@@ -5,7 +5,7 @@ import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {Icon} from 'react-native-eva-icons';
 import FastImage from 'react-native-fast-image';
 import {ms, s, vs} from 'react-native-size-matters';
-import {COLORS, SIZES} from '../../constants';
+import {COLORS, SIZES, images} from '../../constants';
 import {TAG_DATA} from '../../constants/data';
 import {commonStyles} from '../styles/commonStyles';
 import {Hotel} from '../types/Hotel';
@@ -26,7 +26,7 @@ const DetailListHeader = ({item}: {item: Hotel}) => {
       NativeStackScreenProps<MainStackParamList, 'DetailScreen'>['navigation']
     >();
   return (
-    <View style={[commonStyles.mtContainer, commonStyles.gapLg]}>
+    <View style={[commonStyles.gapLg]}>
       <View
         style={[
           commonStyles.row,
@@ -41,7 +41,7 @@ const DetailListHeader = ({item}: {item: Hotel}) => {
       </View>
       <View style={[styles.imageContainer]}>
         <FastImage
-          source={{uri: item.image}}
+          source={images.bannerBg}
           resizeMode="cover"
           style={[styles.image]}
         />
