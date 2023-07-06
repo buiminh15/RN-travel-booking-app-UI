@@ -14,6 +14,7 @@ import {COLORS, SIZES} from '../../constants';
 import {Button, IconC, Text, TextInput} from '../components';
 import {commonStyles} from '../styles/commonStyles';
 import {MainStackParamList} from '../types/navigation';
+import {useProfileStore} from '../hooks';
 
 const EditProfileScreen = () => {
   const navigation =
@@ -31,6 +32,7 @@ const EditProfileScreen = () => {
   const [country, setCountry] = useState('');
   const [openCountryModal, setOpenCountryModal] = useState(false);
 
+  const profile = useProfileStore(state => state.profile);
   const handleImagePicker = () => {
     ImagePicker.openPicker({
       width: 300,
@@ -100,6 +102,7 @@ const EditProfileScreen = () => {
               <TextInput
                 containerStyle={[styles.input]}
                 placeholder="Enter your name"
+                defaultValue={profile.name}
                 onPress={() => console.log('')}
               />
             </View>
@@ -111,6 +114,7 @@ const EditProfileScreen = () => {
                 containerStyle={[styles.input]}
                 placeholder="Enter your email"
                 keyboardType="email-address"
+                defaultValue={profile.email}
                 onPress={() => console.log('')}
               />
             </View>
@@ -123,6 +127,7 @@ const EditProfileScreen = () => {
                 secureTextEntry={hidePass ? true : false}
                 placeholder="Enter your password"
                 iconName="eye-outline"
+                defaultValue={profile.password}
                 onPress={() => setHidePass(!hidePass)}
               />
             </View>
@@ -135,6 +140,7 @@ const EditProfileScreen = () => {
                 onPress={() => setOpenDateModal(true)}
                 editable={false}
                 iconName="chevron-down"
+                defaultValue={profile.dob}
                 value={date.toLocaleDateString('en-GB')}
               />
               <DatePicker
@@ -166,6 +172,7 @@ const EditProfileScreen = () => {
                   editable={false}
                   iconName="chevron-down"
                   value={country}
+                  defaultValue={profile.country}
                   placeholder="Choose your country"
                 />
                 <CountryPicker
