@@ -7,7 +7,6 @@
 - React Native
 - Typescript
 - React Navigation
-- Animated
 - (react-native-size-matters)[https://github.com/nirsky/react-native-size-matters]
 
 ### OS
@@ -17,10 +16,14 @@
 
 ### Demo
 
-<!-- <p>
-<img src="/assets/display/Screenshot_1687750277.png" width="300" height="600"/>
-<img src="/assets/display/Screenshot_1687750288.png" width="300" height="600"/>
-<img src="/assets/display/Screenshot_1687750297.png" width="300" height="600"/>
-<img src="/assets/display/Screenshot_1687750304.png" width="300" height="600"/>
-<img src="/assets/display/Screenshot_1687750320.png" width="300" height="600"/>
-</p> -->
+<p>
+<img src="/assets/display/Screenshot_1688190541.png" width="300" height="600"/>
+<img src="/assets/display/Screenshot_1688833549.png" width="300" height="600"/>
+<img src="/assets/display/Screenshot_1688833557.png" width="300" height="600"/>
+<img src="/assets/display/Screenshot_1688833561.png" width="300" height="600"/>
+<img src="/assets/display/Screenshot_1688833568.png" width="300" height="600"/>
+</p>
+
+### File Apk
+
+[File APK](https://drive.google.com/drive/folders/1Nkx6-TN8c8bKGweiykrRgtLT_poynUuh?usp=sharing)
