@@ -14,7 +14,6 @@ import {usePaginateHotels} from '../hooks/usePaginateHotel';
 import {commonStyles} from '../styles/commonStyles';
 import {Poke} from '../types/Poke';
 import {MainStackParamList} from '../types/navigation';
-import {NAME_TYPE} from './HomeScreen';
 
 const renderMainItem = ({item}: {item: Poke}) => {
   return <ViewAllItem item={item} />;
