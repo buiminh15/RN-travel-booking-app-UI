@@ -4,12 +4,11 @@ import {PokeResponse} from '../types/Poke';
 import {useSWRConfig} from 'swr';
 
 const PAGE_LIMIT = 10;
-export const usePaginateHotels = (path: string, type: 1 | 2 | 3) => {
-  if (!path || !type) {
-    throw new Error('Path or Type is required');
+export const usePaginateHotels = (path: string) => {
+  if (!path) {
+    throw new Error('Path is required');
   }
   const {cache} = useSWRConfig();
-  // const typeIndex = type === 1 ? 0 : type === 2 ? 50 : 100;
   const {data, error, size, setSize, mutate} = useSWRInfinite<PokeResponse>(
     (index: number) =>
       `${path}?offset=${index * PAGE_LIMIT}&limit=${PAGE_LIMIT}`,

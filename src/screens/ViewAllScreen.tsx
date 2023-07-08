@@ -22,13 +22,6 @@ const renderMainItem = ({item}: {item: Poke}) => {
 
 const ViewAllScreen = () => {
   const route = useRoute<RouteProp<MainStackParamList, 'ViewAllScreen'>>();
-  const routeName = route.params?.name;
-  const typeIndex =
-    routeName === NAME_TYPE.NEARBY
-      ? 1
-      : routeName === NAME_TYPE.POPULAR
-      ? 2
-      : 3;
   const {
     hotels,
     error,
@@ -38,7 +31,7 @@ const ViewAllScreen = () => {
     isReachingEnd,
     mutate,
     cache,
-  } = usePaginateHotels(URL_PATH.POKEMON, typeIndex);
+  } = usePaginateHotels(URL_PATH.POKEMON);
 
   console.log('📢 [ViewAllScreen.tsx:35]', hotels.length);
   if (error) {
@@ -60,7 +53,6 @@ const ViewAllScreen = () => {
       </SafeAreaView>
     );
   }
-  console.log('📢 [ViewAllScreen.tsx:63]', cache.keys());
   const handleOnRefresh = () => {
     mutate(undefined);
     cache.delete(URL_PATH.POKEMON);
